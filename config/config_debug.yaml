@@ -1,0 +1,24 @@
+http_server:
+  uri: ":3001"
+  refresh_cookie_name: "refreshToken"
+  access_cookie_name: "accessToken"
+  api_version: "/auth/v1"
+
+grpc_server:
+  uri: ":4000"
+  transport: "tcp"
+
+mongo:
+  uri: "localhost:27017"
+  uri_full: "mongodb://localhost:27017"
+  user_collection: "users"
+  db: "auth"
+  login: "test"
+
+jwt:
+  secret: "secret"
+  accessTTL: "24h"
+  refreshTTL: "24h"
+
+logging:
+  level: "debug"

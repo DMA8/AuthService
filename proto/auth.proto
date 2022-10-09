@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package="./grpc_auth;grpc_auth";
+package orders;
+
+service Auth {
+  rpc Validate (Credential) returns (ValidateResponse) {}
+}
+
+message Credential {
+  string AccessToken  = 1;
+  string RefreshToken = 2;
+}
+
+message ValidateResponse {
+  string Login        = 1;
+  string AccessToken  = 2;
+  string RefreshToken = 3;
+  bool   Success      = 4;
+  bool   IsUpdate     = 5;
+}
