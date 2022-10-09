@@ -1,0 +1,15 @@
+version: '3'
+services:
+  auth:
+    environment:
+    - CFG_PATH=config/config_debug.yaml
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+    - db
+  mongo:
+    image: mongo:latest
+    init: true

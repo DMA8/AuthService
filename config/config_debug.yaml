@@ -1,5 +1,5 @@
 http_server:
-  uri: ":3001"
+  uri: ":3000"
   refresh_cookie_name: "refreshToken"
   access_cookie_name: "accessToken"
   api_version: "/auth/v1"
@@ -9,8 +9,8 @@ grpc_server:
   transport: "tcp"
 
 mongo:
-  uri: "localhost:27017"
-  uri_full: "mongodb://localhost:27017"
+  uri: "mongo:27017"
+  uri_full: "mongodb://mongo:27017"
   user_collection: "users"
   db: "auth"
   login: "test"
